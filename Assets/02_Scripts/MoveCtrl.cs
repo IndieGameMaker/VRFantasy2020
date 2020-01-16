@@ -4,7 +4,15 @@ using UnityEngine;
 
 public class MoveCtrl : MonoBehaviour
 {
-    public Transform camTr;    //하위에 있는 Main Camera의 Transform 컴포넌트
+    public enum MoveType
+    {
+        LOOK_AT, WAY_POINT
+    }
+
+    //이동방식 결정할 변수
+    public MoveType moveType = MoveType.LOOK_AT;
+
+    private Transform camTr;    //하위에 있는 Main Camera의 Transform 컴포넌트
     private CharacterController cc;
 
     // Start is called before the first frame update
