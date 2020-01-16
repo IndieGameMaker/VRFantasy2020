@@ -25,6 +25,25 @@ public class MoveCtrl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        switch(moveType)
+        {
+            case MoveType.LOOK_AT:
+                MoveLookAt();
+                break;
+            
+            case MoveType.WAY_POINT:
+                MoveWayPoint();
+                break;
+        }
+    }
+
+    void MoveLookAt()
+    {
+        cc.SimpleMove(camTr.forward * 1.0f); //Vector * 속도 (1m/sec)
+    }
+
+    void MoveWayPoint()
+    {
+
     }
 }
