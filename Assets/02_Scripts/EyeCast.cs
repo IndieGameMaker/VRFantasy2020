@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class EyeCast : MonoBehaviour
@@ -16,6 +17,10 @@ public class EyeCast : MonoBehaviour
 
     private GameObject prevButton = null;
     private GameObject currButton = null;
+
+    public float selectedTime = 1.0f;
+    private float passedTime  = 0.0f;
+    private Image circleBar;
 
     void Start()
     {
@@ -52,6 +57,7 @@ public class EyeCast : MonoBehaviour
         if (hit.collider.gameObject.layer != 8) return;
 
         currButton = hit.collider.gameObject;
+        circleBar = currButton.GetComponentsInChildren<Image>()[1];
 
         //새로운 버튼을 응시했을 때
         if (currButton != prevButton)
@@ -61,6 +67,11 @@ public class EyeCast : MonoBehaviour
             //이전 버튼에 OnPointerExit 이벤트를 전달
             ExecuteEvents.Execute(prevButton, data, ExecuteEvents.pointerExitHandler);
             prevButton = currButton;
+        }
+        else
+        { //계속 동일한 버튼을 응시하고 있을 경우
+            passedTime += Time.deltaTime;
+            circleBar.fillAmount = passedTime / selectedTime; // 0.0f ~ 1.0f
         }
     }
 
