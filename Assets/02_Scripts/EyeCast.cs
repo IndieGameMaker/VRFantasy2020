@@ -62,6 +62,8 @@ public class EyeCast : MonoBehaviour
         //새로운 버튼을 응시했을 때
         if (currButton != prevButton)
         {
+            ButtonInit();
+            
             //새로운 버튼에 OnPointerEnter 이벤트 전달
             ExecuteEvents.Execute(currButton, data, ExecuteEvents.pointerEnterHandler);
             //이전 버튼에 OnPointerExit 이벤트를 전달
@@ -92,7 +94,7 @@ public class EyeCast : MonoBehaviour
         {
             circleBar.fillAmount = 0.0f;
         }
-        
+
         //이전 버튼의 링을 초기화
         if (prevButton != null)
         {
