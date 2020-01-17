@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class EyeCast : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class EyeCast : MonoBehaviour
     public float distance = 20.0f;
 
     public Animator crossHair;
+
+    private GameObject prevButton = null;
+    private GameObject currButton = null;
 
     void Start()
     {
@@ -30,10 +34,24 @@ public class EyeCast : MonoBehaviour
         if (Physics.Raycast(ray, out hit, distance, 1<<8 | 1<<9))
         {
             MoveCtrl.isStopped = true;
+            crossHair.SetBool("IsLook", true);
+            LookButton();
         }
         else
         {
             MoveCtrl.isStopped = false;
+            crossHair.SetBool("IsLook", false);
+            ReleaseButton();
         }
+    }
+
+    void LookButton()
+    {
+
+    }
+
+    void ReleaseButton()
+    {
+        
     }
 }
