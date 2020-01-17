@@ -11,6 +11,8 @@ public class EyeCast : MonoBehaviour
     [Range(5.0f, 20.0f)]
     public float distance = 20.0f;
 
+    public Animator crossHair;
+
     void Start()
     {
         tr = GetComponent<Transform>();
