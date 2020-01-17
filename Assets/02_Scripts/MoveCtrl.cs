@@ -9,6 +9,8 @@ public class MoveCtrl : MonoBehaviour
         LOOK_AT, WAY_POINT
     }
 
+    public static bool isStopped = false;
+
     //이동방식 결정할 변수
     public MoveType moveType = MoveType.LOOK_AT;
 
@@ -36,6 +38,7 @@ public class MoveCtrl : MonoBehaviour
             Application.Quit();
         }
 
+        if (isStopped == true) return;
 
         switch(moveType)
         {
