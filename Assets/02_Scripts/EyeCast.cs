@@ -21,6 +21,7 @@ public class EyeCast : MonoBehaviour
     public float selectedTime = 1.0f;
     private float passedTime  = 0.0f;
     private Image circleBar;
+    private bool isClicked = false;
 
     void Start()
     {
@@ -75,10 +76,11 @@ public class EyeCast : MonoBehaviour
             passedTime += Time.deltaTime;
             circleBar.fillAmount = passedTime / selectedTime; // 0.0f ~ 1.0f
 
-            if (passedTime >= selectedTime)
+            if (!isClicked && passedTime >= selectedTime)
             {
                 Debug.Log("Clicked");
                 ExecuteEvents.Execute(currButton, data, ExecuteEvents.pointerClickHandler);
+                isClicked = true;
             }
         }
     }
@@ -97,6 +99,7 @@ public class EyeCast : MonoBehaviour
 
     void ButtonInit()
     {
+        isClicked = false;
         passedTime = 0.0f;
         if (circleBar != null)
         {
