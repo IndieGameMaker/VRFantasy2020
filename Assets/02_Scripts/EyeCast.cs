@@ -78,7 +78,7 @@ public class EyeCast : MonoBehaviour
             if (passedTime >= selectedTime)
             {
                 Debug.Log("Clicked");
-                ExecuteEvents.Execute(currButton, data, EventSystem.pointerClickHandler);
+                ExecuteEvents.Execute(currButton, data, ExecuteEvents.pointerClickHandler);
             }
         }
     }
