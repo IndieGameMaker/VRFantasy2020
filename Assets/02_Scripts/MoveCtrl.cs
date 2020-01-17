@@ -67,4 +67,22 @@ public class MoveCtrl : MonoBehaviour
         Vector3.zero    = Vector3(0, 0, 0)
         Vector3.one     = Vector3(1, 1, 1)    
     */
+
+    void OnTriggerEnter(Collider coll)
+    {
+        if (coll.CompareTag("WAY_POINT"))
+        {
+            nextIdx = (++nextIdx >= points.Length) ? 1 : nextIdx;
+
+            /*
+            ++nextIdx;
+            if (nextIdx >= points.Length)
+            {
+                nextIdx = 1;
+            }
+            */
+        }
+    }
+
+
 }
