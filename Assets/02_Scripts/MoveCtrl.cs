@@ -58,6 +58,5 @@ public class MoveCtrl : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, rot, Time.deltaTime * damping);
         //전진
         transform.Translate(Vector3.forward * Time.deltaTime * speed);
-
     }
 }
