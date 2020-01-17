@@ -15,11 +15,14 @@ public class MoveCtrl : MonoBehaviour
     private Transform camTr;    //하위에 있는 Main Camera의 Transform 컴포넌트
     private CharacterController cc;
 
+    public Transform[] points;
+
     // Start is called before the first frame update
     void Start()
     {
         camTr = Camera.main.transform;  //Camera.main  --> 'MainCamera' 태그가 설정된 Camera 리턴
         cc    = this.gameObject.GetComponent<CharacterController>();
+        points = GameObject.Find("WayPointGroup").GetComponentsInChildren<Transform>();
     }
 
     // Update is called once per frame
