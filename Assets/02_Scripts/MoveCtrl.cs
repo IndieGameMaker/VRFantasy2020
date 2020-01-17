@@ -16,7 +16,9 @@ public class MoveCtrl : MonoBehaviour
     private CharacterController cc;
 
     public Transform[] points;
-
+    public float speed = 1.0f;   //이동속도
+    public float damping = 3.0f; //회전속도의 감도
+    
     // Start is called before the first frame update
     void Start()
     {
