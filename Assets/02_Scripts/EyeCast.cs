@@ -11,15 +11,17 @@ public class EyeCast : MonoBehaviour
     [Range(5.0f, 20.0f)]
     public float distance = 20.0f;
 
-    // Start is called before the first frame update
     void Start()
     {
-        
+        tr = GetComponent<Transform>();
+        //tr = transform;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        //광선을 생성
+        ray = new Ray(tr.position, tr.forward);
+        //광성의 시각화
+        Debug.DrawRay(ray.origin, ray.direction * distance, Color.green);
     }
 }
