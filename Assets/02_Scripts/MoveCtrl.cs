@@ -18,7 +18,7 @@ public class MoveCtrl : MonoBehaviour
     public Transform[] points;
     public float speed = 1.0f;   //이동속도
     public float damping = 3.0f; //회전속도의 감도
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,6 +49,9 @@ public class MoveCtrl : MonoBehaviour
 
     void MoveWayPoint()
     {
-
+        //이동할 웨이포인트를 향하는 벡터 계산
+        //점진적으로 회전 (Slerp)
+        //전진
+        
     }
 }
