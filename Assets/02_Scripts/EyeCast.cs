@@ -71,9 +71,15 @@ public class EyeCast : MonoBehaviour
             prevButton = currButton;
         }
         else
-        { //계속 동일한 버튼을 응시하고 있을 경우
+        {  //계속 동일한 버튼을 응시하고 있을 경우
             passedTime += Time.deltaTime;
             circleBar.fillAmount = passedTime / selectedTime; // 0.0f ~ 1.0f
+
+            if (passedTime >= selectedTime)
+            {
+                Debug.Log("Clicked");
+                ExecuteEvents.Execute(currButton, data, EventSystem.pointerClickHandler);
+            }
         }
     }
 
