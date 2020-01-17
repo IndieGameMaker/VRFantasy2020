@@ -84,4 +84,18 @@ public class EyeCast : MonoBehaviour
             prevButton = null;
         }
     }
+
+    void ButtonInit()
+    {
+        passedTime = 0.0f;
+        if (circleBar != null)
+        {
+            circleBar.fillAmount = 0.0f;
+        }
+        //이전 버튼의 링을 초기화
+        if (prevButton != null)
+        {
+            prevButton.GetComponentsInChildren<Image>[1].fillAmount = 0.0f;
+        }
+    }
 }
