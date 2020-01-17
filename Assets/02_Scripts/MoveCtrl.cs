@@ -55,8 +55,9 @@ public class MoveCtrl : MonoBehaviour
         //Quaternion 산출
         Quaternion rot = Quaternion.LookRotation (dir);
         //점진적으로 회전 (Slerp)
-
+        transform.rotation = Quaternion.Slerp(transform.rotation, rot, Time.deltaTime * damping);
         //전진
+        transform.Translate(Vector3.forward * Time.deltaTime * speed);
 
     }
 }
