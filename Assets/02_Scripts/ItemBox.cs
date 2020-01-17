@@ -21,4 +21,9 @@ public class ItemBox : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         MoveCtrl.isStopped = false;
     }
 
+    public void OnButtonClicked(string msg)
+    {
+        Debug.Log(msg + " is clicked !!!!");
+    }
+
 }
