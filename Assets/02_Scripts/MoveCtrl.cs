@@ -31,6 +31,12 @@ public class MoveCtrl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+
+
         switch(moveType)
         {
             case MoveType.LOOK_AT:

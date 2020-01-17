@@ -1627,7 +1627,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7b1a7e6fb30b4d739dc22fc2303d335, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveType: 1
+  moveType: 0
   points: []
   speed: 2
   damping: 3
