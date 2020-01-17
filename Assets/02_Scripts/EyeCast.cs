@@ -92,6 +92,7 @@ public class EyeCast : MonoBehaviour
         {
             circleBar.fillAmount = 0.0f;
         }
+        
         //이전 버튼의 링을 초기화
         if (prevButton != null)
         {
