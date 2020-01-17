@@ -83,6 +83,8 @@ public class EyeCast : MonoBehaviour
         if (prevButton != null)
         {
             ExecuteEvents.Execute(prevButton, data, ExecuteEvents.pointerExitHandler);
+            prevButton.GetComponentsInChildren<Image>()[1].fillAmount = 0.0f;
+
             prevButton = null;
         }
     }
@@ -93,12 +95,6 @@ public class EyeCast : MonoBehaviour
         if (circleBar != null)
         {
             circleBar.fillAmount = 0.0f;
-        }
-
-        //이전 버튼의 링을 초기화
-        if (prevButton != null)
-        {
-            prevButton.GetComponentsInChildren<Image>()[1].fillAmount = 0.0f;
         }
     }
 }
