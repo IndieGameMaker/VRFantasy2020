@@ -23,5 +23,15 @@ public class EyeCast : MonoBehaviour
         ray = new Ray(tr.position, tr.forward);
         //광성의 시각화
         Debug.DrawRay(ray.origin, ray.direction * distance, Color.green);
+
+        //
+        if (Physics.Raycast(ray, out hit, distance, 1<<8 | 1<<9))
+        {
+            MoveCtrl.isStopped = true;
+        }
+        else
+        {
+            MoveCtrl.isStopped = false;
+        }
     }
 }
